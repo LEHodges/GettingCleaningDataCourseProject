@@ -15,9 +15,26 @@ This script follows the steps outlined in the project guidelines:
 	creates a second, independent tidy data set with the 
 	average of each variable for each activity and each subject.
 	
-	
 The output file (Means.txt) contains means for each subject for each of the activities 
 for each of the means and standard deviation variables of the full dataset 
 (66 variables, with Subject and Activity as IDs). 
 
- 
+##Steps for the analysis (also included as comments in the script file):
+	*Loading Data##
+	*Loading Features (to assign Column Names)
+	*Assigning column names to Test and Train using Features
+	*SubsettingData
+    	*Extracts only the measurements on the mean and standard deviation for each measurement.
+    	*Based on answer provided here:
+        	http://stackoverflow.com/questions/24176448/subset-data-based-on-partial-match-of-column-names
+	*Loading Subject and Activity Labels
+	*Converting Subject and Activity file format and information
+	*Adding Activity Labels as a new column
+	*Adding subject information as a new column
+	*renaming Subject and Activity columns
+	*Combine Training and Testing data into one table
+	*Using dplyr:
+	*arranged and grouped data by Subject and then Activity
+	*summarised - resulting in a tidy set with the average of each variable (see codebook)
+	for each activity by each subject 
+	*write object 'means' out to a text file
